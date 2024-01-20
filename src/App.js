@@ -132,7 +132,6 @@ export default function App() {
           Submit !
         </button>
       </form>
-
       <table>
         <thead>
           <tr>
@@ -141,17 +140,19 @@ export default function App() {
             <td> Email</td>
             <td> Number</td>
             <td> Gender</td>
+            <td> button</td>
           </tr>
         </thead>
         <tbody>
           {data.map((val, i) => {
             return (
-              <tr key={i} onClick={() => editItem(val.id)}>
+              <tr key={i} >
                 <td> {val.id}</td>
                 <td> {val.name}</td>
                 <td> {val.email}</td>
                 <td> {val.number}</td>
                 <td> {val.gender}</td>
+                <td> <span onClick={() => editItem(val.id)}>Edit</span> <span onClick={() => handleDelet(val.id)}>Delete</span></td>
               </tr>
             );
           })}
